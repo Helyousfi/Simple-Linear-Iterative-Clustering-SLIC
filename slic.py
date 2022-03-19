@@ -9,10 +9,9 @@ import argparse
 # load the image and convert it to a floating point data type
 image = img_as_float(io.imread("image.jpg"))
 
-
 # apply SLIC and extract (approximately) the supplied number
 # of segments
-segments = slic(image, n_segments = 250, sigma = 5)
+segments = slic(image, n_segments = 250, compactness=10, sigma = 5)
 
 # show the output of SLIC
 fig = plt.figure("Superpixels -- %d segments%")
